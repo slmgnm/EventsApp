@@ -22,7 +22,7 @@ $ npm init
 
 $ nodemon start
 
-# go to http://localhost:8080
+# go to http://localhost:6060
 
 # run tests
 
