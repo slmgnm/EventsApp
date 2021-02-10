@@ -1,0 +1,4 @@
+{
+  "jwtPrivateKey": "tapahtumat_jwtPrivateKey",
+  "db": "tapahtumat_db"
+}

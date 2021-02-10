@@ -1,0 +1,13 @@
+body {
+  background-color: rgba(0, 0, 0, 0.76);
+  color: blanchedalmond;
+}
+.card-body {
+  background-color: lightgrey;
+  color: black;
+}
+.page-link {
+  background-color: lightslategrey;
+  color: blanchedalmond;
+}
+
