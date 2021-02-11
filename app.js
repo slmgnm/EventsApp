@@ -28,7 +28,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: { maxAge: 60000 * 15 },
-  })
+  }),
 );
 app.use(flash());
 // bring passport
@@ -58,6 +58,6 @@ app.use("/users", users);
 
 const port = process.env.PORT || 8080;
 const server = app.listen(port, () => {
-  console.log(port," app is wokring on port 8080");
+  console.log(port, " app is wokring on port 8080");
 });
 module.exports = server;
