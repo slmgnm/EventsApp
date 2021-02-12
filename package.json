@@ -1,7 +1,7 @@
 {
   "name": "node_events",
   "version": "1.0.0",
-  "description": "to show full project using nodejs and mongodb",
+  "description": "full project using nodejs and mongodb",
   "main": "app.js",
   "scripts": {
     "test": "jest --watchAll --verbose"
