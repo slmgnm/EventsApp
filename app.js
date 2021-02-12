@@ -56,8 +56,8 @@ const router = require("./routes/event-routes");
 app.use("/users", users);
 // listen to port 8080
 
-const port = process.env.PORT || 8080;
-const server = app.listen(port, () => {
-  console.log(port, " app is wokring on port 8080");
+const PORT = process.env.PORT || 8080;
+const server = app.listen(PORT, () => {
+  console.log(PORT, " app is wokring on port 8080");
 });
 module.exports = server;
