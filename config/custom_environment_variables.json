@@ -1,4 +1,4 @@
 {
-  "jwtPrivateKey": "tapahtumat_jwtPrivateKey",
-  "db": "tapahtumat_db"
+  "jwtPrivateKey": "events_jwtPrivateKey",
+  "db": "events_db"
 }
