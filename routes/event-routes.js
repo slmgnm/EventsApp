@@ -48,7 +48,7 @@ router.get("/:pageNo?", (req, res) => {
       }
       //res.json(chunk)
 
-      res.render("./event/index", {
+      res.render("event/index", {
         chunk: chunk,
         message: req.flash("info"),
         total: parseInt(totalDocs),
