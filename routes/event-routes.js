@@ -47,7 +47,8 @@ router.get("/:pageNo?", (req, res) => {
         chunk.push(events.slice(i, chunkSize + i));
       }
       //res.json(chunk)
-      res.render("event/index", {
+
+      res.render("./event/index", {
         chunk: chunk,
         message: req.flash("info"),
         total: parseInt(totalDocs),
@@ -134,7 +135,7 @@ router.get("/edit/:id", isAuthenticated, (req, res) => {
 //home
 // router.get("/home", (req, res) => {
 //   res.render("event/home")
-  
+
 // };
 
 // update the form
