@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //bring static
-app.use(express.static(path.join(__dirname, "static", "public")));
-// app.use(express.static("public"));
+// app.use(express.static(path.join(__dirname, "static", "public")));
+app.use(express.static("public"));
 app.use(express.static("uploads"));
 app.use(express.static("node_modules"));
 
