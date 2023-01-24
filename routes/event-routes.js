@@ -11,7 +11,7 @@ isAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) return next();
   res.redirect("/users/login");
 };
-router.use(express.static("views"));
+
 //create new events
 
 router.get("/create", isAuthenticated, (req, res) => {
