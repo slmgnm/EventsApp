@@ -11,7 +11,7 @@ isAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) return next();
   res.redirect("/users/login");
 };
-
+router.use(express.static("views"));
 //create new events
 
 router.get("/create", isAuthenticated, (req, res) => {
@@ -19,7 +19,6 @@ router.get("/create", isAuthenticated, (req, res) => {
     errors: req.flash("errors"),
   });
 });
-
 // route to home events
 router.get("/:pageNo?", (req, res) => {
   let pageNo = 1;
@@ -49,7 +48,7 @@ router.get("/:pageNo?", (req, res) => {
       }
       //res.json(chunk)
 
-      res.render("event/index", {
+      res.render("./event/index", {
         chunk: chunk,
         message: req.flash("info"),
         total: parseInt(totalDocs),
