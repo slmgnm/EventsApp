@@ -13,6 +13,7 @@ require("./startup/prod")(app);
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+app.set("public", path.join(__dirname, "public"));
 // bring body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
