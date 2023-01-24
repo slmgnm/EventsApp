@@ -48,12 +48,13 @@ app.get("/", (req, res) => {
 // bring events routes
 
 const events = require("./routes/event-routes");
-app.use("/events", events);
-
+// app.use("/events", events);
+app.use(express.static('views' + '/events', events));
 // bring user routes
 const users = require("./routes/user-routes");
 const router = require("./routes/event-routes");
-app.use("/users", users);
+// app.use("/users", users);
+app.use(express.static('views' + '/users', users));
 // listen to port 8080
 
 const PORT = process.env.PORT || 8080;

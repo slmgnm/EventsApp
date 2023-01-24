@@ -19,6 +19,7 @@ router.get("/create", isAuthenticated, (req, res) => {
     errors: req.flash("errors"),
   });
 });
+
 // route to home events
 router.get("/:pageNo?", (req, res) => {
   let pageNo = 1;
