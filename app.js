@@ -21,8 +21,6 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(express.static("uploads"));
 app.use(express.static("node_modules"));
-app.use(express.static("views"));
-
 // session and flash config .
 app.use(
   session({
@@ -50,13 +48,13 @@ app.get("/", (req, res) => {
 // bring events routes
 
 const events = require("./routes/event-routes");
-app.use("/events", events);
-// app.use(express.static('views' + '/events', events));
+// app.use("/events", events);
+app.use(express.static("views" + "/event", events));
 // bring user routes
 const users = require("./routes/user-routes");
 const router = require("./routes/event-routes");
-app.use("/users", users);
-// app.use(express.static('views' + '/users', users));
+// app.use("/users", users);
+app.use(express.static("views" + "/user", users));
 // listen to port 8080
 
 const PORT = process.env.PORT || 8080;
