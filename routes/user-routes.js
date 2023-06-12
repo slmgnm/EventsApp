@@ -16,11 +16,11 @@ const multer = require("multer");
 //   var upload = multer({ storage: storage })
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/images');
+    cb(null, "uploads/images");
   },
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now() + '.png');
-  }
+    cb(null, file.fieldname + "-" + Date.now() + ".png");
+  },
 });
 
 const upload = multer({ storage: storage });
@@ -89,19 +89,20 @@ router.get("/profile", isAuthenticated, (req, res) => {
 // })
 router.post("/uploadAvatar", upload.single("avatar"), async (req, res) => {
   if (req.file) {
-    // Access the uploaded image data
-    const imageBuffer = req.file.buffer;
-
-    // Convert the image buffer to a base64-encoded string
-    const imageBase64 = imageBuffer.toString("base64");
-
-    // Update the user document with the image data
     try {
-      await User.updateOne({ _id: req.user._id }, { avatar: imageBase64 });
+      const imageBuffer = req.file.buffer;
+      const contentType = req.file.mimetype;
+
+      await User.updateOne(
+        { _id: req.user._id },
+        {
+          avatarData: imageBuffer,
+          avatarContentType: contentType,
+        }
+      );
 
       res.redirect("/users/profile");
     } catch (err) {
-      // Handle any error that occurs during the update
       console.error(err);
       res.status(500).send("Internal Server Error");
     }
