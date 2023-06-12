@@ -6,14 +6,12 @@ const multer = require("multer");
 // configure multer
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const destinationPath = path.join(__dirname, "images");
-    cb(null, destinationPath);
+    cb(null, "uploads/images");
   },
   filename: function (req, file, cb) {
     cb(null, file.fieldname + "-" + Date.now() + ".png");
   },
 });
-
 var upload = multer({ storage: storage });
 // middleware to check if user is logged in
 
